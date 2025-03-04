@@ -4,7 +4,6 @@ function solution(s) {
     function isValid(s){
         let arr= [];
         let brackets  = {"]":"[","}":"{",")":"("}
-        let status = true;
 
         for(let index of s){
             if(index === "(" || index === "{"||index === "["){
@@ -16,7 +15,7 @@ function solution(s) {
             }
         }
 
-        return status;
+        return stack.length === 0;
 
     }
 
