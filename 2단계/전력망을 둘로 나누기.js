@@ -2,14 +2,14 @@ function solution(n, wires) {
     let minDiff = Infinity;
     
     // 그래프 생성 (인접 리스트)
-
     const buildGraph = (n, wires) => {
-        let graph = Array.from({length:n+1},()=>[])
-        for(let [v1,v2] of wires){
-            graph[v1].push(v2)
-            graph[v2].push(v1)
+        let graph = Array.from({ length: n + 1 }, () => []);
+        for (let [v1, v2] of wires) {
+            graph[v1].push(v2);
+            graph[v2].push(v1);
         }
-    }
+        return graph;
+    };
 
     // BFS를 사용하여 연결된 송전탑 개수 찾기
     const countNodes = (graph, start, blocked) => {
